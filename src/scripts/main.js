@@ -6,8 +6,7 @@ const applicationElement = document.querySelector(".giffygram")
 
 export const renderApp = () => {
     fetchUsers()
-    const user = parseInt(localStorage.getItem("gg_user"))
-    
+    const user = parseInt(localStorage.getItem("gg_user")
 
     if (user) {
         applicationElement.innerHTML = GiffyGram()
@@ -16,4 +15,6 @@ export const renderApp = () => {
     }
 }
 
+
 renderApp()
+
