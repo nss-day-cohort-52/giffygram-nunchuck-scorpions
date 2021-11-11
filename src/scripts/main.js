@@ -6,15 +6,30 @@ const applicationElement = document.querySelector(".giffygram")
 
 export const renderApp = () => {
     fetchUsers()
-    const user = parseInt(localStorage.getItem("gg_user"))
+    .then(
+        () => {
+        const user = parseInt(localStorage.getItem("gg_user"))
 
-    if (user) {
-        applicationElement.innerHTML = GiffyGram()
-    } else {
-        applicationElement.innerHTML = LoginForm()
-    }
+        if (user) {
+            applicationElement.innerHTML = GiffyGram()
+        } else {
+            applicationElement.innerHTML = LoginForm()
+        }
+
+            }
+       
+
+    )
+    
 }
 
 
 renderApp()
 
+applicationElement.addEventListener(
+    "stateChanged",
+    customEvent => {
+        renderApp()
+        console.log("rerender")
+    }
+)
