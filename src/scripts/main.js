@@ -10,7 +10,7 @@ export const renderApp = () => {
         () => {
         const user = parseInt(localStorage.getItem("gg_user"))
 
-        if (user) {
+        if (user !== NaN) {
             applicationElement.innerHTML = GiffyGram()
         } else {
             applicationElement.innerHTML = LoginForm()
