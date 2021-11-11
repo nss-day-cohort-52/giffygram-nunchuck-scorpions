@@ -1,7 +1,7 @@
 import { getUsers } from "../data/provider.js";
 
 export const showFavoritesBox = () => { // this will create the function to represent and show the favorited posts when the user checks the box in the footer
-    const favoriteCheckBox = getFavorites()
+    const favorites = getFavorites()
     return `
     <h3>Show only favorites</h3>
     <select id="favorite">
@@ -35,7 +35,7 @@ export const footerUsers = () => { // this will create the function to represent
 }
 
 export const selectDates = () => {
-    const postDates = getDates()
+    const dates = getDates()
     return `
     <h3>Posts since</h3>
     <select id="date">
