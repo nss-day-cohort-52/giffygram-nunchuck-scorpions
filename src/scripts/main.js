@@ -17,12 +17,10 @@ export const renderApp = () => {
         }
 
             }
-       
 
     )
     
 }
-
 
 renderApp()
 
