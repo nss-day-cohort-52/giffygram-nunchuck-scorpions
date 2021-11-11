@@ -10,6 +10,7 @@ const applicationState = {
         displayFavorites: false,
         displayMessages: false
     },
+    posts: []
 }
 
 
@@ -25,4 +26,22 @@ export const fetchUsers = () => {
 
 export const getUsers = () => {
     return applicationState.users.map(user => ({...user}))
+}
+
+
+export const sendPost = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userServiceRequest)
+    }
+
+
+    return fetch(`${apiURL}/posts`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        })
 }
