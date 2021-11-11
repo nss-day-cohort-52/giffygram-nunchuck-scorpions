@@ -26,7 +26,7 @@ export const GiffyGram = () => {
         html += `${createPost()}`
 
     }
-    html += `<footer>
+    html += `<footer class ="footer">
              ${footerUsers()}
             </footer>`
     // Show main main UI
