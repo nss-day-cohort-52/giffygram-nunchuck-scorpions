@@ -1,6 +1,5 @@
 import { getUsers } from "../data/provider.js"
 
-
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "loginButton") {
         let foundUser = null
@@ -10,7 +9,7 @@ document.addEventListener("click", clickEvent => {
         const password = document.querySelector("input[name='password']").value
 
         for (const user of userState) {
-            if (user.email === email && user.password === password) {
+            if (user.loginEmail === email && user.password === password) {
                 foundUser = user
             }
         }
@@ -18,6 +17,7 @@ document.addEventListener("click", clickEvent => {
         if (foundUser !== null) {
             localStorage.setItem("gg_user", foundUser.id)
             document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+            
         }
     }
 })
