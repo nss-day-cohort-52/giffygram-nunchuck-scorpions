@@ -25,7 +25,7 @@ export const postList = () => {
             <div><p>${post.description}</p>
             
             
-            <p>Posted by <a href="" id="999">${currentUser.name}</a></p><div>`
+            <p>Posted by <a href="" id="999" name="${currentUser.id}">${currentUser.name}</a></p><div>`
         }).join("")
 
         

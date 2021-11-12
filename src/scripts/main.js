@@ -37,24 +37,3 @@ applicationElement.addEventListener(
 )
 
 
-// export const renderApp = () => {
-//     fetchUsers()
-//     .then(() => fetchPosts())
-//     .then(
-//         () => {
-//         const user = parseInt(localStorage.getItem("gg_user"))
-//         const userLinkClicked = localStorage.getItem("user_profile")
-
-//         if (user !== NaN) {
-//             applicationElement.innerHTML = GiffyGram()
-//         } else if (userLinkClicked) {
-//             applicationElement.innerHTML = userProfilePage()
-//         } else {
-//             applicationElement.innerHTML = LoginForm()
-//         }
-
-//             }
-
-//     )
-    
-// }

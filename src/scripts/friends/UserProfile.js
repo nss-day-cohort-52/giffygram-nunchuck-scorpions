@@ -1,8 +1,3 @@
-// create session storage variable that is created when clicking on user name 
-// add if statement in giffygram i think, that will render user profile only   
-// make the users profile just a header for quick testing purposes 
-// profile should display first and last name 
-// profile should display total number of posts, try iterating over post and for each post that has a matching userId, add one to variable i (google)
 
 import { getUsers, getPosts } from "../data/provider.js"
 
@@ -10,7 +5,7 @@ const applicationElement = document.querySelector(".giffygram")
 getUsers()
 applicationElement.addEventListener("click", (evt) => {
     if (parseInt(evt.target.id) === 999) {
-        sessionStorage.setItem("user_profile", true)
+        sessionStorage.setItem("user_profile", evt.target.name)
         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     }
 })
@@ -25,7 +20,7 @@ applicationElement.addEventListener("click", (evt) => {
 export const userProfilePage = () => {
     const userArray = getUsers()
     const postArray = getPosts()
-    const currentUserId = parseInt(localStorage.getItem("gg_user"))
+    const currentUserId = parseInt(sessionStorage.getItem("user_profile"))
     let userName = null
     let i = 0
 
