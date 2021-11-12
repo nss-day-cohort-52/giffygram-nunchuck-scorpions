@@ -3,7 +3,12 @@ export const NavBar = () => {
 
     navbarHTML += "<ul>"
     
-    navbarHTML +
+    navbarHTML += `<li>
+                    <a href= ${./scripts}
+                    Home
+    </li>`
+
+
 
 
 }
