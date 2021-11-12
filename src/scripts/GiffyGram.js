@@ -1,6 +1,7 @@
 import { createPost, createPostButton } from "./feed/PostEntry.js"
 import { postList } from "./feed/PostList.js"
 import { footerUsers } from "./nav/Footer.js"
+import { DmButton } from "./nav/NavBar.js";
 
 const applicationElement = document.querySelector(".giffygram")
 applicationElement.addEventListener("click",
