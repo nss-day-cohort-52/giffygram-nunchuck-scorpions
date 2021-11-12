@@ -58,7 +58,9 @@
 }
 
 .navigation__logout {
+    display: flex;
     margin-right: 2em;
+    align-items: flex-end;
 }
 
 #directMessageIcon {
