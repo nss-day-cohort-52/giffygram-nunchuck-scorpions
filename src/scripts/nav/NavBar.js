@@ -8,15 +8,16 @@ export const NavBar = () => {
 
     navbarHTML += "</ul>"
 
-
+return navbarHTML
 
 
 }
 
+// constructs the DM button in the navbar
 const DmButton = () => {
     let DmBttnHTML = `` 
     
-    html += `<button type="button" onclick= somethingplaceholder;> Direct Message </button>`
+    DmBttnHTML += `<button type="button" onclick=something;> Direct Message </button>`
 
     return DmBttnHTML
 }
