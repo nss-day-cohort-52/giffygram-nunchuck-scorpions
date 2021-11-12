@@ -1,4 +1,5 @@
 import { createPost, createPostButton } from "./feed/PostEntry.js"
+import { postList } from "./feed/PostList.js"
 import { footerUsers } from "./nav/Footer.js"
 
 const applicationElement = document.querySelector(".giffygram")
@@ -26,6 +27,7 @@ export const GiffyGram = () => {
         html += `${createPost()}`
 
     }
+    html += `${postList()}`
     html += `<footer class ="footer">
              ${footerUsers()}
             </footer>`
