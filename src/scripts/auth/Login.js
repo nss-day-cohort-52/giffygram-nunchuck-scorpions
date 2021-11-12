@@ -15,10 +15,17 @@ document.addEventListener("click", clickEvent => {
         }
 
         if (foundUser !== null) {
-            localStorage.setItem("gg_user", foundUser.id)
+            sessionStorage.setItem("gg_user", foundUser.id)
             document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
             
         }
+    }
+})
+const applicationElement = document.querySelector(".giffygram")
+applicationElement.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "logoutButton") {
+        sessionStorage.removeItem("gg_user")
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     }
 })
 
