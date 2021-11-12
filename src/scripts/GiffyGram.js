@@ -1,6 +1,7 @@
 import { createPost, createPostButton } from "./feed/PostEntry.js"
 import { postList } from "./feed/PostList.js"
 import { footerUsers } from "./nav/Footer.js"
+import { NavBar } from "./nav/NavBar.js"
 
 const applicationElement = document.querySelector(".giffygram")
 applicationElement.addEventListener("click",
@@ -18,9 +19,8 @@ applicationElement.addEventListener("click",
 export const GiffyGram = () => {
     let html = "";
     const createPostButtonExists = sessionStorage.getItem("create_post")
-   
-    html += `<h1>Giffygram</h1>`
-    html += `<button id="logoutButton">Logout</button>`
+
+    html += `<nav class="navigation">${NavBar()}</nav>`
 
     html += `${createPostButton()}`
 
