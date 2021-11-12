@@ -24,6 +24,8 @@ export const fetchUsers = () => {
     )
 }
 
+
+
 export const getUsers = () => {
     return applicationState.users.map(user => ({...user}))
 }
@@ -37,11 +39,24 @@ export const sendPost = (userServiceRequest) => {
         },
         body: JSON.stringify(userServiceRequest)
     }
-
-
+    
+    
     return fetch(`${apiURL}/posts`, fetchOptions)
-        .then(response => response.json())
-        .then(() => {
-            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
-        })
+    .then(response => response.json())
+    .then(() => {
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+    })
 }
+export const fetchPosts = () => {
+    return fetch(`${apiURL}/posts`)
+    .then(response => response.json())
+    .then(
+        (servicePosts) => {
+            applicationState.posts = servicePosts
+        }
+        )
+    }
+    
+    export const getPosts = () => {
+        return applicationState.posts.map(post => ({...post}))
+    }
