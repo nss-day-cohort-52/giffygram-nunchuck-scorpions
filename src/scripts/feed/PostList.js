@@ -22,7 +22,10 @@ export const postList = () => {
             <div><h2>${post.title}</h2></div>
             <div>
             <img src="${post.imageUrl}"></div>
-            <div><p>${post.description}</p><p>Posted by ${currentUser.name}</p><div>`
+            <div><p>${post.description}</p>
+            
+            
+            <p>Posted by <a href="" id="999">${currentUser.name}</a></p><div>`
         }).join("")
 
         

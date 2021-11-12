@@ -1,17 +1,20 @@
 import { GiffyGram } from "./GiffyGram.js"
 import {LoginForm } from "./auth/Login.js"
 import { fetchPosts, fetchUsers } from "./data/provider.js"
+import { userProfilePage } from "./friends/UserProfile.js"
 
 const applicationElement = document.querySelector(".giffygram")
-
 export const renderApp = () => {
     fetchUsers()
     .then(() => fetchPosts())
     .then(
         () => {
         const user = parseInt(localStorage.getItem("gg_user"))
+        const userLinkClicked = sessionStorage.getItem("user_profile")
 
-        if (user !== NaN) {
+        if (userLinkClicked) {
+            applicationElement.innerHTML = userProfilePage()
+        } else if (user !== NaN) {
             applicationElement.innerHTML = GiffyGram()
         } else {
             applicationElement.innerHTML = LoginForm()
@@ -32,3 +35,26 @@ applicationElement.addEventListener(
         console.log("rerender")
     }
 )
+
+
+// export const renderApp = () => {
+//     fetchUsers()
+//     .then(() => fetchPosts())
+//     .then(
+//         () => {
+//         const user = parseInt(localStorage.getItem("gg_user"))
+//         const userLinkClicked = localStorage.getItem("user_profile")
+
+//         if (user !== NaN) {
+//             applicationElement.innerHTML = GiffyGram()
+//         } else if (userLinkClicked) {
+//             applicationElement.innerHTML = userProfilePage()
+//         } else {
+//             applicationElement.innerHTML = LoginForm()
+//         }
+
+//             }
+
+//     )
+    
+// }
