@@ -1,19 +1,19 @@
+// main function that exports all the buttons in the nav bar 
 export const NavBar = () => {
     let navbarHTML = ""
 
     navbarHTML += "<ul>"
     
-    navbarHTML += `<li>
-                    <a href= ${./scripts}
-                    Home
-    </li>`
+    navbarHTML += `<li>${DmButton()}</li>`
+
+    navbarHTML += "</ul>"
 
 
 
 
 }
 
-export const DmButton = () => {
+const DmButton = () => {
     let DmBttnHTML = `` 
     
     html += `<button type="button" onclick= somethingplaceholder;> Direct Message </button>`
