@@ -10,6 +10,7 @@ export const postList = () => {
     html += `
     <section class="post_list">
     ${
+        
         posts.map((post) => {
             const currentUser = user.find((x) => {
                 if (x.id === post.userId) {

@@ -18,8 +18,9 @@ applicationElement.addEventListener("click",
 export const GiffyGram = () => {
     let html = "";
     const createPostButtonExists = sessionStorage.getItem("create_post")
-
+   
     html += `<h1>Giffygram</h1>`
+    html += `<button id="logoutButton">Logout</button>`
 
     html += `${createPostButton()}`
 

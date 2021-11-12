@@ -1,4 +1,6 @@
 import { getUsers } from "../data/provider.js";
+import { LoginForm } from "../data/Login.js";
+// we just need to logout........
 
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "logoutButton") {
@@ -14,10 +16,11 @@ document.addEventListener("click", clickEvent => {
             }
         }
 
-        if (foundUser !== null) {
+        if (foundUser) {
             localStorage.removeItem("gg_user", foundUser.id)
-            document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
-            
+            document.querySelector(".loginForm").dispatchEvent(new CustomEvent("stateChanged"))
+            return LoginForm()
         }
     }
 })
+
