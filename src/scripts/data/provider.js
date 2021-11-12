@@ -23,13 +23,38 @@ export const fetchUsers = () => {
         }
     )
 }
+export const fetchFavorites = () => { // fetches the favorites for when something is starred.
+    return fetch(`${apiURL}/favorites`)
+    .then(response => response.json())
+    .then(
+        (favorites) => {
+            applicationState.users = favorites
+        }
+    )
+}
+
+export const fetchDates = () => { // will fetch the dates for when the scrollable footer date is selected.
+    return fetch(`${apiURL}/dates`)
+    .then(response => response.json())
+    .then(
+        (dates) => {
+            applicationState.users = dates
+        }
+    )
+}
+
 
 
 
 export const getUsers = () => {
     return applicationState.users.map(user => ({...user}))
 }
-
+export const getFavorites = () => {
+    return applicationState.favorites.map(favorite => ({...favorite}))
+}
+export const getDates = () => {
+    return applicationState.dates.map(date => ({...date}))
+}
 
 export const sendPost = (userServiceRequest) => {
     const fetchOptions = {

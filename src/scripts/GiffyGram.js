@@ -20,7 +20,9 @@ export const GiffyGram = () => {
     let html = "";
     const createPostButtonExists = sessionStorage.getItem("create_post")
 
-    html += `<nav class="navigation">${NavBar()}</nav>`
+    html += `<nav class="navigation">
+    ${NavBar()} 
+    </nav>`
 
     html += `${createPostButton()}`
 

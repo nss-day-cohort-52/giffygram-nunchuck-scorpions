@@ -34,7 +34,7 @@ export const footerUsers = () => { // this will create the function to represent
         `
 }
 
-export const selectDates = () => {
+export const selectDates = () => { // this will create the function to represent the dates at the bottom of the footer to choose which year the posts are from.
     const dates = getDates()
     return `
     <h3>Posts since</h3>

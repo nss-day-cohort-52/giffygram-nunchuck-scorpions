@@ -9,12 +9,12 @@ export const renderApp = () => {
     .then(() => fetchPosts())
     .then(
         () => {
-        const user = parseInt(localStorage.getItem("gg_user"))
+        const user = parseInt(sessionStorage.getItem("gg_user"))
         const userLinkClicked = sessionStorage.getItem("user_profile")
 
         if (userLinkClicked) {
             applicationElement.innerHTML = userProfilePage()
-        } else if (user !== NaN) {
+        } else if (user) {
             applicationElement.innerHTML = GiffyGram()
         } else {
             applicationElement.innerHTML = LoginForm()

@@ -4,7 +4,7 @@ const applicationElement = document.querySelector(".giffygram")
 applicationElement.addEventListener("click", (evt) =>{
     if (evt.target.id === "submitPost"){
 
-        const user = parseInt(localStorage.getItem("gg_user"))
+        const user = parseInt(sessionStorage.getItem("gg_user"))
         const userTitle = applicationElement.querySelector("#title").value;
         const userGif = applicationElement.querySelector("#gifURL").value
         const userDescription = applicationElement.querySelector("#description").value
